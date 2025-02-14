@@ -165,8 +165,8 @@ const normalizedData = {
             size="large"
             disabled={loading}
             onClick={() => activeTab === 0 
-              ? handleSubmit('https://trendforecasterai.onrender.com/analyze', vogueInputs)
-              : handleSubmit('https://virtual-stylist.onrender.com/api/recommendations', { user_features: hauteInputs })
+              ? handleSubmit(import.meta.env.VITE_TRENDFORECASTER_API, vogueInputs)
+              : handleSubmit(import.meta.env.VITE_VIRTUAL_STYLIST_API, { user_features: hauteInputs })
             }
             sx={{ px: 6, py: 1.5 }}
           >
