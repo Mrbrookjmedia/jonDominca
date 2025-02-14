@@ -7,29 +7,27 @@ export const categories = [
       slug: "fashion-trends",
       description: "Curated insights on emerging luxury aesthetics",
       posts: 24,
-      image: "https://images.unsplash.com/photo-1606477057209-611910dfb135?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmFzaGlvbiUyMHRyZW5kc3xlbnwwfHwwfHx8MA%3D%3D"
+      image:  "/images/image1.png"
     },
     {
       name: "Styling Tips",
       slug: "styling-tips",
       description: "Masterclass in elevated wardrobe composition",
       posts: 18,
-      image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhc2hpb24lMjB0cmVuZHN8ZW58MHx8MHx8fDA%3D"
+      image: "/images/image2.png"
     },
     {
       name: "Behind the Scenes",
       slug: "behind-the-scenes",
       description: "Atelier secrets and creative processes",
       posts: 15,
-      image: "https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGZhc2hpb24lMjB0cmVuZHN8ZW58MHx8MHx8fDA%3D"
-    },
+      image: "/images/image3.png"    },
     {
       name: "Designer Dialogues",
       slug: "designer-dialogues",
       description: "Philosophies from couture visionaries",
       posts: 12,
-      image: "https://images.unsplash.com/photo-1477064996809-dae46985eee7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGZhc2hpb24lMjB0cmVuZHN8ZW58MHx8MHx8fDA%3D"
-    }
+      image: "/images/image4.png"    }
   ];
   
   export const featuredPosts = [
@@ -37,8 +35,8 @@ export const categories = [
       title: "Silhouette Revolution: 2025's Architectural Tailoring",
       slug: "silhouette-revolution-2025",
       category: "fashion-trends",
-      image: "https://images.unsplash.com/photo-1532675432006-329c6fed7045?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMxfHxmYXNoaW9ufGVufDB8fDB8fHww",
-      date: "Feb 5, 2025",
+      image: "/images/image5.png",   
+         date: "Feb 5, 2025",
       author: "Isabelle Marceau",
       excerpt: "Exploring structured minimalism through innovative fabric engineering",
       content: `
@@ -57,8 +55,8 @@ export const categories = [
       title: "The Art of Monochromatic Layering",
       slug: "monochromatic-layering-art",
       category: "styling-tips",
-      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9ub2Nocm9tYXRpYyUyMGxheXJpbmclMjBmYXNoaW9ufGVufDB8fDB8fHww",
-      date: "Feb 1, 2025",
+      image: "/images/image6.png",     
+          date: "Feb 1, 2025",
       author: "Olivier Dubois",
       excerpt: "Master texture play within a singular hue spectrum",
       content: `
@@ -76,8 +74,7 @@ export const categories = [
       title: "Atelier Chronicles: Crafting the Perfect Trench",
       slug: "crafting-perfect-trench",
       category: "behind-the-scenes",
-      image: "https://images.unsplash.com/photo-1571513800374-df1bbe650e56?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vbm9jaHJvbWF0aWMlMjBsYXlyaW5nJTIwZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      date: "Jan 28, 2025",
+      image: "/images/image7.png",         date: "Jan 28, 2025",
       author: "Sophie Lemaire",
       excerpt: "128-step creation process of our signature outerwear",
       content: `
@@ -102,8 +99,7 @@ export const categories = [
       title: "Luxury Unisex: Beyond Gender Conventions",
       slug: "luxury-unisex-fashion",
       category: "fashion-trends",
-      image: "https://plus.unsplash.com/premium_photo-1664869376090-6fb4097331ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fG1vbm9jaHJvbWF0aWMlMjBsYXlyaW5nJTIwZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      author: "Olivia Laurent",
+      image: "/images/image8.png",         author: "Olivia Laurent",
       date: "Feb 8, 2025",
       excerpt: "Breaking boundaries in contemporary fashion design",
       content: `
@@ -122,8 +118,7 @@ export const categories = [
       title: "Conversation with Creative Director Amélie Roux",
       slug: "amelie-roux-interview",
       category: "designer-dialogues",
-      image: "https://images.unsplash.com/photo-1446214814726-e6074845b4ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYwfHxtb25vY2hyb21hdGljJTIwbGF5cmluZyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Étienne Beaulieu",
+      image: "/images/image9.png",         author: "Étienne Beaulieu",
       date: "Feb 6, 2025",
       excerpt: "Exclusive insights into the creative process of a visionary designer",
       content: `
@@ -192,8 +187,7 @@ export const categories = [
     {
       title: "Silhouette Revolution: 2025's Architectural Tailoring",
       slug: "silhouette-revolution-2025",
-      image: "https://plus.unsplash.com/premium_photo-1661727401384-eb1e73fbb334?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEFyY2hpdGVjdHVyYWwlMjBUYWlsb3Jpbmd8ZW58MHx8MHx8fDA%3D",
-      date: "Feb 5, 2025",
+      image: "/images/image10.png",         date: "Feb 5, 2025",
       author: "Isabelle Marceau",
       excerpt: "Exploring structured minimalism through innovative fabric engineering",
       content: `
@@ -213,8 +207,7 @@ export const categories = [
     {
       title: "Luxury Unisex: Beyond Gender Conventions",
       slug: "luxury-unisex-fashion",
-      image: "https://plus.unsplash.com/premium_photo-1726750838466-b77d3de9ecc2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fEFyY2hpdGVjdHVyYWwlMjBUYWlsb3Jpbmd8ZW58MHx8MHx8fDA%3D",
-      author: "Olivia Laurent",
+      image: "/images/image11.png",         author: "Olivia Laurent",
       date: "Feb 8, 2025",
       excerpt: "Breaking boundaries in contemporary fashion design",
       content: `
@@ -234,8 +227,7 @@ export const categories = [
     {
       title: "Neo-Vintage: Futuristic Takes on Retro Styles",
       slug: "neo-vintage-fashion",
-      image: "https://plus.unsplash.com/premium_photo-1683121263622-664434494177?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      author: "Marcus Chen",
+      image: "/images/image12.png",         author: "Marcus Chen",
       date: "Mar 15, 2025",
       excerpt: "How designers are reimagining classic styles with a futuristic twist",
       content: `
@@ -254,8 +246,7 @@ export const categories = [
     {
       title: "Biofabricated Luxury: Growing the Future of Fashion",
       slug: "biofabricated-luxury-fashion",
-      image: "https://plus.unsplash.com/premium_photo-1683121263622-664434494177?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      author: "Dr. Amelia Zhao",
+      image: "/images/image13.png",         author: "Dr. Amelia Zhao",
       date: "Apr 2, 2025",
       excerpt: "Exploring the rise of lab-grown materials in high-end fashion",
       content: `
@@ -274,8 +265,7 @@ export const categories = [
     {
       title: "Adaptive Couture: Fashion Meets Functionality",
       slug: "adaptive-couture-fashion",
-      image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Sofia Rossi",
+      image: "/images/image14.png",         author: "Sofia Rossi",
       date: "May 20, 2025",
       excerpt: "The rise of high-fashion garments that adapt to the wearer's needs",
       content: `
@@ -294,8 +284,7 @@ export const categories = [
     {
       title: "Virtual Couture: The Digital Fashion Revolution",
       slug: "virtual-couture-digital-fashion",
-      image: "https://plus.unsplash.com/premium_photo-1708110770188-3e4216b93119?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Alex Nakamura",
+      image: "/images/image15.png",         author: "Alex Nakamura",
       date: "Jun 10, 2025",
       excerpt: "How digital fashion is reshaping the luxury landscape",
       content: `
@@ -314,8 +303,7 @@ export const categories = [
     {
       title: "Haute Tech: Wearable Technology Goes Luxe",
       slug: "haute-tech-luxury-wearables",
-      image: "https://images.unsplash.com/photo-1545291730-faff8ca1d4b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Lena Schmidt",
+      image: "/images/image16.png",         author: "Lena Schmidt",
       date: "Jul 5, 2025",
       excerpt: "The seamless integration of high-tech features in luxury fashion",
       content: `
@@ -334,8 +322,7 @@ export const categories = [
     {
       title: "Sustainable Opulence: Eco-Luxury on the Rise",
       slug: "sustainable-opulence-eco-luxury",
-      image: "https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Isabella Green",
+      image: "/images/image17.png",         author: "Isabella Green",
       date: "Aug 18, 2025",
       excerpt: "How luxury brands are embracing sustainability without compromising on glamour",
       content: `
@@ -354,8 +341,7 @@ export const categories = [
     {
       title: "Global Fusion: Cultural Crossroads in High Fashion",
       slug: "global-fusion-cultural-fashion",
-      image: "https://plus.unsplash.com/premium_photo-1683817138481-dcdf64a40859?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Raj Patel",
+      image: "/images/image26.png",         author: "Raj Patel",
       date: "Sep 3, 2025",
       excerpt: "The celebration of global craftsmanship and cultural exchange in luxury fashion",
       content: `
@@ -374,8 +360,7 @@ export const categories = [
     {
       title: "Bespoke AI: Personalized Fashion Through Artificial Intelligence",
       slug: "bespoke-ai-personalized-fashion",
-      image: "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      author: "Dr. Emma Watson",
+      image: "/images/image19.png",         author: "Dr. Emma Watson",
       date: "Oct 12, 2025",
       excerpt: "How AI is revolutionizing personalized luxury fashion",
       content: `
@@ -399,8 +384,7 @@ export const categories = [
       title: "The Art of Monochromatic Layering",
       slug: "monochromatic-layering",
       category: "styling-tips",
-      image: "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      date: "Feb 1, 2025",
+      image: "/images/image20.png",         date: "Feb 1, 2025",
       author: "Olivier Dubois",
       excerpt: "Master texture play within a singular hue spectrum",
       content: `<p>Monochromatic dressing has evolved from a styling shortcut to a sophisticated art form in 2025. The new approach focuses on creating depth through strategic texture combinations rather than color contrasts. Begin with a base layer in your chosen hue - cashmere turtlenecks in winter or silk camisoles for warmer months provide perfect foundations.</p>
@@ -420,8 +404,7 @@ export const categories = [
       title: "Power Dressing 2.0: Modern Professional Looks",
       slug: "power-dressing-modern",
       category: "styling-tips",
-      image: "https://images.unsplash.com/photo-1566206091558-7f218b696731?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      date: "Mar 5, 2025",
+      image: "/images/image21.png",         date: "Mar 5, 2025",
       author: "Sophie Martin",
       excerpt: "Contemporary takes on professional attire",
       content: `<p>The 2025 professional wardrobe merges boardroom formality with creative expression. Traditional suiting gets reimagined through unexpected fabrications - think neoprene blazers and crinkled silk shirting. The new power uniform balances authority with approachability.</p>
@@ -442,8 +425,7 @@ export const categories = [
       title: "Accessorizing Minimalist Outfits",
       slug: "minimalist-accessories",
       category: "styling-tips",
-      image: "https://images.unsplash.com/photo-1589363358751-ab05797e5629?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      date: "Mar 12, 2025",
+      image: "/images/image22.png",         date: "Mar 12, 2025",
       author: "Lucas Graves",
       excerpt: "Elevating simple looks with strategic accessories",
       content: `<p>2025's minimalist movement demands accessories that amplify simplicity rather than compete with it. The key lies in calculated interventions - a single statement piece paired with barely-there accents.</p>
@@ -471,8 +453,7 @@ export const categories = [
       title: "Atelier Chronicles: Crafting the Perfect Trench",
       slug: "perfect-trench-creation",
       category: "behind-the-scenes",
-      image: "https://images.unsplash.com/photo-1597633125097-5a9961e1f03d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      date: "Jan 28, 2025",
+      image: "/images/image23.png",         date: "Jan 28, 2025",
       author: "Sophie Lemaire",
       excerpt: "128-step creation process of signature outerwear",
       content: `<p>In our Milan atelier, crafting the signature trench coat remains a 78-hour labor of love. The process begins with selecting the finest 30oz cotton gabardine, waterproofed through a 14-stage waxing process.</p>
@@ -493,8 +474,7 @@ export const categories = [
       title: "Fashion Week: Backstage with Models",
       slug: "fashion-week-backstage",
       category: "behind-the-scenes",
-      image: "https://images.unsplash.com/photo-1559697242-a465f2578a95?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGZhc2hpb258ZW58MHx8MHx8fDA%3D",
-      date: "Feb 15, 2025",
+      image: "/images/image24.png",         date: "Feb 15, 2025",
       author: "Marcus Tan",
       excerpt: "Exclusive access to backstage preparations",
       content: `<p>Behind the velvet ropes at Milan Fashion Week, a meticulously choreographed chaos unfolds. 143 professionals transform 48 models in 2.7 hours.</p>
@@ -520,8 +500,7 @@ export const categories = [
       title: "Conversation with Creative Director Amélie Roux",
       slug: "amelie-roux-interview",
       category: "designer-dialogues",
-      image: "https://images.unsplash.com/photo-1580651214613-f4692d6d138f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxmYXNoaW9ufGVufDB8fDB8fHww",
-      date: "Feb 6, 2025",
+      image: "/images/image25.png",         date: "Feb 6, 2025",
       author: "Étienne Beaulieu",
       excerpt: "Insights into creative processes",
       content:  `
@@ -552,8 +531,7 @@ export const categories = [
       title: "Marc Jacobs on Sustainable Luxury",
       slug: "marc-jacobs-sustainability",
       category: "designer-dialogues",
-      image: "https://plus.unsplash.com/premium_photo-1673502751768-586478eb3fcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI1fHxmYXNoaW9ufGVufDB8fDB8fHww",
-      date: "Mar 9, 2025",
+      image: "/images/image26.png",         date: "Mar 9, 2025",
       author: "Lila Chen",
       excerpt: "Pioneering eco-friendly high fashion",
       content: `<p>Marc Jacobs' 2025 collection marks a radical sustainability shift: "We're not just using organic cotton - we're reimagining luxury's entire lifecycle."</p>
