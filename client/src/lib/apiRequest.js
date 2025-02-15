@@ -6,5 +6,8 @@ const apiRequest = axios.create({
   
   //  baseURL: "https://phoenixlabs-agal.onrender.com/api", //for deployment
   withCredentials: true,
+  headers: {
+    "Cache-Control": "no-cache" // ADD THIS
+  }
 });
 export default apiRequest;

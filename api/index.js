@@ -29,8 +29,12 @@ app.use(
     ]
      ,
     credentials: true,
-    // methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    // allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: [
+      "Content-Type", 
+      "Authorization", 
+      "Cache-Control" // ADD THIS
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   })
 );
 
@@ -62,8 +66,8 @@ app.get("*", (req, res) => {
 // Start server
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-// app.listen(PORT, '0.0.0.0', () => {
+// app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   connectToDatabase();
   console.log(`Server started on port ${PORT}`);
 });
