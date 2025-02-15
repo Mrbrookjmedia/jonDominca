@@ -66,6 +66,11 @@ export const AuthContextProvider = ({ children }) => {
     try {
       // Fetch latest user data
       const response = await apiRequest.get('/users/me');
+// Force cookie refresh for cross-domain
+    if(process.env.NODE_ENV === 'production') {
+      document.cookie = `jwt=${response.data.token}; Path=/; Secure; SameSite=None`;
+    }
+      
       const updatedUser = {
         ...response.data,
         isAdmin: response.data.isAdmin || false,
