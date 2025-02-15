@@ -1,7 +1,6 @@
-
 import express from "express";
+const app = express();
 import dotenv from "dotenv";
-app.set("trust proxy", 1);
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
@@ -15,7 +14,7 @@ import wishlistRoutes from "./routes/wishlist.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import connectToDatabase from "./db/connectTodatabase.js";
 
-const app = express();
+app.set("trust proxy", 1);
 const __dirname = path.resolve();
 
 // Middleware
@@ -61,7 +60,7 @@ app.get("*", (req, res) => {
 
 // Start server
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   connectToDatabase();
   console.log(`Server started on port ${PORT}`);
 });
