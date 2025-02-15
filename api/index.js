@@ -14,7 +14,7 @@ import wishlistRoutes from "./routes/wishlist.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import connectToDatabase from "./db/connectTodatabase.js";
 
-app.set("trust proxy", 1);
+// app.set("trust proxy", 1);
 const __dirname = path.resolve();
 
 // Middleware
@@ -26,21 +26,22 @@ app.use(
     origin: [
       "https://jon-dominica-international.netlify.app",
       "http://localhost:5173"
-    ],
+    ]
+     ,
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    // methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    // allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
 
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Cross-Origin-Resource-Policy", "cross-origin");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   res.header("Cross-Origin-Resource-Policy", "cross-origin");
+//   next();
+// });
 
 // API Routes
 app.use("/api/auth", authRoutes);
@@ -59,8 +60,10 @@ app.get("*", (req, res) => {
 });
 
 // Start server
+
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
+// app.listen(PORT, '0.0.0.0', () => {
   connectToDatabase();
   console.log(`Server started on port ${PORT}`);
 });

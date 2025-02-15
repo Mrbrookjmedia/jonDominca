@@ -61,8 +61,8 @@ const UserSettings = () => {
       const response = await apiRequest.put("/auth/update", updateData);
 
 // Add these 2 lines 👇
-    document.cookie = `jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
-    await refreshUserData();
+    // document.cookie = `jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
+    // await refreshUserData();
       
       updateUser(response.data.user);
       
