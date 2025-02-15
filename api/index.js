@@ -21,22 +21,20 @@ const __dirname = path.resolve();
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: [
-      "https://jon-dominica-international.netlify.app",
-      "http://localhost:5173"
-    ]
-     ,
-    credentials: true,
-    allowedHeaders: [
-      "Content-Type", 
-      "Authorization", 
-      "Cache-Control" // ADD THIS
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  })
-);
+app.use(cors({
+  origin: "https://jon-dominica-international.netlify.app",
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"], // Remove "Cookie" here
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"] // Add OPTIONS
+}));
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Origin', 'https://jon-dominica-international.netlify.app'); // Hardcode origin
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS'); // Add OPTIONS
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Remove "Cookie"
+  next();
+});
 
 // app.use((req, res, next) => {
 //   res.header(
