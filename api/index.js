@@ -23,8 +23,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    // origin: ["http://localhost:5173", "http://localhost:5174"],
-    origin: process.env.CLIENT_URL,
+    origin: ["https://jon-dominica-international.netlify.app","http://localhost:5173",],
+    // origin: process.env.CLIENT_URL,
     credentials: true,
   })
 );
