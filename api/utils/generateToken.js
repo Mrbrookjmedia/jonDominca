@@ -7,12 +7,16 @@ const generateTokenAndSetCookie = (userId, res) => {
     expiresIn: "15d",
   });
   res.cookie("jwt", token, {
-    maxAge: 15 * 24 * 60 * 60 * 1000, //MS
     httpOnly: true, //to prevent XSS attacks
     // sameSite: "Strict",
-    secure: process.env.NODE_ENV === "production",
-    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-    domain: process.env.NODE_ENV === "production" ? ".onrender.com" : "localhost"
+    // secure: process.env.NODE_ENV === "production",
+    // sameSite: process.env.NODE_ENV === "production" ? "None" : "lax",
+    // domain: process.env.NODE_ENV === "production" ? ".onrender.com" : "localhost",
+    secure: true, // Must be true for HTTPS
+    sameSite: "None", // Required for cross-origin cookies
+    domain: "localhost",
+
+    maxAge: 15 * 24 * 60 * 60 * 1000, //MS
   });
 };
 

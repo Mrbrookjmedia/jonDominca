@@ -93,19 +93,54 @@ export const AuthContextProvider = ({ children }) => {
 
 
 
+  useEffect(() => {
+    const validateToken = async () => {
+      try {
+        const res = await apiRequest.get("/users/me");
+        setCurrentUser(res.data);
+      } catch (err) {
+        setCurrentUser(null);
+      }
+    };
+    validateToken();
+  }, []);
 
 
+//   const login =  async (userData) => {
+// // Ensure admin status is properly stored
+// const userWithAdmin = {
+//   ...userData,
+//   isAdmin: userData.isAdmin || false
+// };
 
-  const login = (userData) => {
-// Ensure admin status is properly stored
-const userWithAdmin = {
-  ...userData,
-  isAdmin: userData.isAdmin || false
+//     localStorage.setItem("user", JSON.stringify(userWithAdmin));
+//     setCurrentUser(userWithAdmin);
+//   };
+
+
+const login = async (userData) => {
+  try {
+    const res = await apiRequest.post("/auth/login", userData);
+    setCurrentUser(res.data.user);
+    
+    // Force refresh to validate admin status
+    await validateToken(); 
+  } catch (err) {
+    console.error("Login error:", err);
+    throw err;
+  }
 };
-
-    localStorage.setItem("user", JSON.stringify(userWithAdmin));
-    setCurrentUser(userWithAdmin);
-  };
+// Validate token and permissions
+const validateToken = async () => {
+  try {
+    const res = await apiRequest.get("/users/me");
+    setCurrentUser(res.data);
+    return res.data;
+  } catch (err) {
+    setCurrentUser(null);
+    return null;
+  }
+};
 
   const logout = () => {
     localStorage.removeItem("user");
@@ -129,6 +164,7 @@ const userWithAdmin = {
         login, 
         logout,
         updateUser,
+        validateToken,
         wishlistItems,
         loadUserData // Export this function
       }}

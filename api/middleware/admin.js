@@ -1,21 +1,21 @@
 // middleware/admin.js
 import User from "../models/user.model.js";
 
-export const admin = async (req, res, next) => {
-  try {
-    // req.userId should have been set by verifyToken middleware
-    const user = await User.findById(req.userId);
-    if (user && user.isAdmin) {
-      // User is admin; proceed to the next middleware/controller.
-      return next();
-    } else {
-      return res.status(403).json({ message: "Admin access required" });
-    }
-  } catch (error) {
-    console.error("Admin middleware error:", error);
-    return res.status(500).json({ message: "Error verifying admin status" });
-  }
-};
+// export const admin = async (req, res, next) => {
+//   try {
+//     // req.userId should have been set by verifyToken middleware
+//     const user = await User.findById(req.userId);
+//     if (user && user.isAdmin) {
+//       // User is admin; proceed to the next middleware/controller.
+//       return next();
+//     } else {
+//       return res.status(403).json({ message: "Admin access required" });
+//     }
+//   } catch (error) {
+//     console.error("Admin middleware error:", error);
+//     return res.status(500).json({ message: "Error verifying admin status" });
+//   }
+// };
 
 // middleware/admin.js
 // import User from "../models/user.model.js";
@@ -55,3 +55,17 @@ export const admin = async (req, res, next) => {
 //   }
 // };
 
+// middleware/admin.js
+export const admin = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.userId); // Use userId from JWT
+    if (!user) return res.status(404).json("User not found");
+    
+    if (user.isAdmin) return next(); // Correct admin check
+    
+    return res.status(403).json("Admin access required");
+  } catch (error) {
+    console.error("Admin check error:", error);
+    res.status(500).json("Server error");
+  }
+};
