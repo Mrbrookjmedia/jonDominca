@@ -35,7 +35,7 @@ apiRequest.interceptors.request.use(
   (config) => {
     const token = getCookieByName('jwt');
     if (token) {
-      config.headers.Authorization = Bearer ${token};
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
