@@ -42,11 +42,11 @@ app.use(cookieParser());
 //   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 //   exposedHeaders: ["Set-Cookie"] // Required for cookie visibility
 // }));
-
+app.set("trust proxy", 1);
 app.use(cors({
-  origin: "http://localhost:5173",
+  // origin: "http://localhost:5173",
 
-  // origin: "https://jon-dominica-international.netlify.app",
+  origin: "https://jon-dominica-international.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization","Cache-Control"],
   credentials: true 
