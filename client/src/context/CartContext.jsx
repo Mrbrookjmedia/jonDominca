@@ -15,8 +15,8 @@ export const CartProvider = ({ children }) => {
       const response = await apiRequest.get('/cart');
       setCart(response.data.items || []);
       setError(null);
+      // await fetchCart();
     } catch (err) {
-      await fetchCart();
       setError("Failed to load cart, kindly refresh the page");
       console.error("Error fetching cart:", err);
     } finally {
