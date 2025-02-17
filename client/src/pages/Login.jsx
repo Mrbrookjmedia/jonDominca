@@ -8,10 +8,11 @@ import "react-toastify/dist/ReactToastify.css";
 // import googleicon from "../../images/googleicon.png";
 
 const Login = () => {
+
   const navigate = useNavigate();
   const { updateUser } = useContext(AuthContext);
   const [message, setMessage] = useState("");
-  
+  const { login } = useContext(AuthContext); // Get login from AuthContext
 
   const [formData, setFormData] = useState({
     username: "",
@@ -26,21 +27,32 @@ const Login = () => {
     });
   };
 
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await apiRequest.post("/auth/login", {
+  //       username: formData.username,
+  //       password: formData.password,
+  //     });
+
+  //     console.log(response.data);
+  //     updateUser(response.data.user);
+  //     toast.success(response.data.message);
+  //     setTimeout(() => {
+  //       navigate("/");
+  //     }, 1000);
+  //   } 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await apiRequest.post("/auth/login", {
-        username: formData.username,
-        password: formData.password,
-      });
+      await login(formData); // Use AuthContext's login
+      toast.success("Login successful");
+      navigate("/");
+    }
 
-      console.log(response.data);
-      updateUser(response.data.user);
-      toast.success(response.data.message);
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-    } catch (error) {
+
+
+    catch (error) {
       console.error(error);
       const errorMessage =
         error.response && error.response.data && error.response.data.message

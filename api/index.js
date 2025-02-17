@@ -21,12 +21,39 @@ const __dirname = path.resolve();
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173", // Allow requests only from this origin
+//     credentials: true,
+//     allowedHeaders: ["Content-Type", "Authorization"]
+
+//      // Allow cookies & authentication headers
+//   })
+// );
+
+// app.use(cors({
+//   // origin: [
+//   //   "https://jon-dominica-international.netlify.app",
+//   //   "https://jon-dominica.onrender.com"
+//   // ],
+//   origin: "http://localhost:5173",
+//   credentials: true,
+//   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+//   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+//   exposedHeaders: ["Set-Cookie"] // Required for cookie visibility
+// }));
+
 app.use(cors({
-  origin: "https://jon-dominica-international.netlify.app",
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization","Cache-Control"], 
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"] // Add OPTIONS
+  origin: "http://localhost:5173",
+
+  // origin: "https://jon-dominica-international.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization","Cache-Control"],
+  credentials: true 
 }));
+
+
+
 
 // app.use((req, res, next) => {
 //   res.header(
@@ -57,7 +84,7 @@ app.get("*", (req, res) => {
 
 const PORT = process.env.PORT || 4000;
 // app.listen(PORT, () => {
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   connectToDatabase();
   console.log(`Server started on port ${PORT}`);
 });

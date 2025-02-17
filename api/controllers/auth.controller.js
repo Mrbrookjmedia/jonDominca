@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import User from "../models/user.model.js";
-import generateTokenAndSetCookie from "../utils/generateToken.js";
+import {generateTokenAndSetCookie} from "../utils/generateToken.js";
 
 export const signup = async (req, res) => {
   try {
@@ -47,9 +47,9 @@ export const login = async (req, res) => {
       return res.status(400).send({ message: "Invalid username or password" });
     }
 
-    generateTokenAndSetCookie(user._id, res);
+     const token=  generateTokenAndSetCookie(user._id);
 
-    res.status(200).json({ message: "Login Successful", user });
+    res.status(200).json({ message: "Login Successful", token, user });
   } catch (error) {
     console.log("Error in login controller", error.message);
     res.status(500).json({ error: "Internal Server Error" });

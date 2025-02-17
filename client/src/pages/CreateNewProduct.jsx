@@ -971,8 +971,7 @@ const CreateNewProduct = () => {
 
     apiRequest.post(
         "/products/createProduct",
-        payload,
-        { withCredentials: true }
+        payload
       ).then((res) => { 
         toast.success("Product created successfully!");
         navigate("/admin");

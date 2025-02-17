@@ -18,18 +18,27 @@ const UserPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log("JWT Token:", localStorage.getItem("jwt")); // Debugging log
         const [ordersRes, wishlistRes] = await Promise.all([
-          apiRequest.get("/orders/user"),
-          apiRequest.get("/user/wishlist"),
+          apiRequest.get("/orders/user", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwt")}`
+            }
+          }   ),
+          apiRequest.get("/user/wishlist" , {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwt")}`
+            }
+          }),
         ]);
 
         setOrders(ordersRes.data);
         setWishlist(wishlistRes.data);
-        await refreshUserData();
+        // await refreshUserData();
         setError(null);
       } catch (err) {
         console.error("Fetch error:", err);
-        setError("Failed to load user details");
+        setError("Header debug:", localStorage.getItem("jwt"));
       } finally {
         setIsLoading(false);
       }

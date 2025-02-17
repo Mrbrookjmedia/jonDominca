@@ -66,8 +66,8 @@ const AdminEditProduct = () => {
 
         if (processedData.category) {
           const { data: subcategories } = await apiRequest.get(
-            `/products/subcategories/${processedData.category}`,
-            { headers: { 'Cache-Control': 'no-cache' } }
+            `/products/subcategories/${processedData.category}`
+            // { headers: { 'Cache-Control': 'no-cache' } }
           );
           setAvailableSubcategories(Array.isArray(subcategories) ? subcategories : []);
         }
@@ -88,8 +88,8 @@ const AdminEditProduct = () => {
 
     try {
       const { data } = await apiRequest.get(
-        `/products/subcategories/${category}`,
-        { headers: { 'Cache-Control': 'no-cache' } }
+        `/products/subcategories/${category}`
+        // { headers: { 'Cache-Control': 'no-cache' } }
       );
       setAvailableSubcategories(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -178,7 +178,7 @@ const AdminEditProduct = () => {
           price: Number(productData.price)
         },
         {
-          withCredentials: true,
+          // withCredentials: true,
           headers: {
             'Content-Type': 'application/json'
           }

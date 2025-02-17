@@ -7,10 +7,12 @@ const ProtectRoute = () => {
   const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!currentUser) {
+    // if (!currentUser) {
+      if (!localStorage.getItem("jwt")) {
       toast.error("Please login!");
     }
-  }, [currentUser]);
+  // }, [currentUser]); 
+  }, []); 
 
   return currentUser ? <Outlet /> : <Navigate to="/login" />;
 };

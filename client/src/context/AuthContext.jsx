@@ -121,10 +121,23 @@ export const AuthContextProvider = ({ children }) => {
 const login = async (userData) => {
   try {
     const res = await apiRequest.post("/auth/login", userData);
-    setCurrentUser(res.data.user);
-    
+
+ // Verify token exists in response
+ if (!res.data.token) {
+  throw new Error("No token received from server");
+}
+
+// Store token in localStorage
+localStorage.setItem("jwt", res.data.token);
+localStorage.setItem("user", JSON.stringify(res.data.user));
+console.log("Token stored:", res.data.token); // Debugging
+
+// Add this header validation
+apiRequest.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
+setCurrentUser(res.data.user);
+
     // Force refresh to validate admin status
-    await validateToken(); 
+    // await validateToken(); 
   } catch (err) {
     console.error("Login error:", err);
     throw err;
@@ -143,6 +156,7 @@ const validateToken = async () => {
 };
 
   const logout = () => {
+    localStorage.removeItem("jwt");
     localStorage.removeItem("user");
     setCurrentUser(null);
     setWishlistItems([]);
