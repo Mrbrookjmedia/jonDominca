@@ -38,7 +38,7 @@ const AdminAllProducts = () => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
         // await axios.delete(`http://localhost:4000/api/products/${productId}`, { withCredentials: true });
-        await apiRequest.delete(`/products/${productId}`, { withCredentials: true });
+        await apiRequest.delete(`/products/${productId}`);
         toast.success("Product deleted successfully");
         fetchProducts(); // Refresh product list
       } catch (error) {
