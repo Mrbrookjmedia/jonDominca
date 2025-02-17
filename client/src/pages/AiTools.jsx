@@ -1,4 +1,3 @@
-// FormPage.jsx
 import React, { useState } from "react";
 import { 
   Tabs, Tab, Box, TextField,Grid  ,
@@ -57,6 +56,15 @@ const FormPage = () => {
 
   const handleSubmit = async (apiUrl, data) => {
     setLoading(true);
+
+
+     // Add null check for data.user_features
+  if (!data?.user_features) {
+    setResults({ error: "Missing user features" });
+    setOpen(true);
+    setLoading(false);
+    return;
+  }
 
 // Normalize input values
 const normalizedData = {
@@ -165,7 +173,7 @@ const normalizedData = {
             size="large"
             disabled={loading}
             onClick={() => activeTab === 0 
-              ? handleSubmit(import.meta.env.VITE_TRENDFORECASTER_API, vogueInputs)
+              ? handleSubmit(import.meta.env.VITE_TRENDFORECASTER_API, { user_features: vogueInputs })
               : handleSubmit(import.meta.env.VITE_VIRTUAL_STYLIST_API, { user_features: hauteInputs })
             }
             sx={{ px: 6, py: 1.5 }}
