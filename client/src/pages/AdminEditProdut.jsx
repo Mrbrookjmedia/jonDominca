@@ -89,7 +89,6 @@ const AdminEditProduct = () => {
     try {
       const { data } = await apiRequest.get(
         `/products/subcategories/${category}`
-        // { headers: { 'Cache-Control': 'no-cache' } }
       );
       setAvailableSubcategories(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -178,7 +177,6 @@ const AdminEditProduct = () => {
           price: Number(productData.price)
         },
         {
-          // withCredentials: true,
           headers: {
             'Content-Type': 'application/json'
           }
@@ -186,8 +184,6 @@ const AdminEditProduct = () => {
         
 
       );  
-      //  delete payload.color;
-      // delete payload.size;
 
       toast.success("Product updated successfully!");
       navigate("/admin/products");

@@ -33,43 +33,10 @@ export const AuthContextProvider = ({ children }) => {
     loadUserData();
   }, []);
 
-  // Update refreshUserData to also refresh the user data
-  // const refreshUserData = async () => {
-  //   try {
-  //     const userData = loadUserData(); // Reload user data
-  //     if (userData) {
-  //       const wishlistResponse = await apiRequest.get("/user/wishlist");
-  //       setWishlistItems(wishlistResponse.data);
-  //     }
-  //   } catch (error) {
-  //     console.error("Failed to refresh user data:", error);
-  //   }
-  // };
-
-  // const refreshUserData = async () => {
-  //   try {
-  //     const response = await apiRequest.get('/users/me'); // Add this endpoint in backend
-  //     const updatedUser = {
-  //       ...response.data,
-  //       isAdmin: response.data.isAdmin || false
-  //     };
-  //     localStorage.setItem("user", JSON.stringify(updatedUser));
-  //     setCurrentUser(updatedUser);
-  //     return updatedUser;
-  //   } catch (error) {
-  //     console.error("Failed to refresh user data:", error);
-  //     return null;
-  //   }
-  // };
-
   const refreshUserData = async () => {
     try {
       // Fetch latest user data
       const response = await apiRequest.get('/users/me');
-// Force cookie refresh for cross-domain
-    // if(process.env.NODE_ENV === 'production') {
-    //   document.cookie = `jwt=${response.data.token}; Path=/; Secure; SameSite=None`;
-    // }
       
       const updatedUser = {
         ...response.data,
@@ -104,19 +71,6 @@ export const AuthContextProvider = ({ children }) => {
     };
     validateToken();
   }, []);
-
-
-//   const login =  async (userData) => {
-// // Ensure admin status is properly stored
-// const userWithAdmin = {
-//   ...userData,
-//   isAdmin: userData.isAdmin || false
-// };
-
-//     localStorage.setItem("user", JSON.stringify(userWithAdmin));
-//     setCurrentUser(userWithAdmin);
-//   };
-
 
 const login = async (userData) => {
   try {

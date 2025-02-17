@@ -14,55 +14,21 @@ import wishlistRoutes from "./routes/wishlist.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import connectToDatabase from "./db/connectTodatabase.js";
 
-// app.set("trust proxy", 1);
 const __dirname = path.resolve();
 
 // Middleware
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173", // Allow requests only from this origin
-//     credentials: true,
-//     allowedHeaders: ["Content-Type", "Authorization"]
-
-//      // Allow cookies & authentication headers
-//   })
-// );
-
-// app.use(cors({
-//   // origin: [
-//   //   "https://jon-dominica-international.netlify.app",
-//   //   "https://jon-dominica.onrender.com"
-//   // ],
-//   origin: "http://localhost:5173",
-//   credentials: true,
-//   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
-//   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-//   exposedHeaders: ["Set-Cookie"] // Required for cookie visibility
-// }));
 app.set("trust proxy", 1);
 app.use(cors({
   // origin: "http://localhost:5173",
 
-  origin: "https://jon-dominica-international.netlify.app",
+  origin: process.env.CLIENT_URL || "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization","Cache-Control"],
   credentials: true 
 }));
-
-
-
-
-// app.use((req, res, next) => {
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.header("Cross-Origin-Resource-Policy", "cross-origin");
-//   next();
-// });
 
 // API Routes
 app.use("/api/auth", authRoutes);

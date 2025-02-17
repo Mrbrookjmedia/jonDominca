@@ -5,7 +5,6 @@ import apiRequest from "../lib/apiRequest";
 import { AuthContext } from "../context/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import googleicon from "../../images/googleicon.png";
 
 const Login = () => {
 
@@ -27,21 +26,6 @@ const Login = () => {
     });
   };
 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await apiRequest.post("/auth/login", {
-  //       username: formData.username,
-  //       password: formData.password,
-  //     });
-
-  //     console.log(response.data);
-  //     updateUser(response.data.user);
-  //     toast.success(response.data.message);
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 1000);
-  //   } 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -149,53 +133,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
-
-// import React, { useState } from "react";
-// import { useAuth } from "../context/AuthContext"; // Import useAuth hook
-// import apiRequest from "../lib/apiRequest"; // Axios instance
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const { updateUser } = useAuth(); // Extract updateUser from AuthContext
-
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await apiRequest.post("/auth/login", { email, password });
-
-//       if (response.status === 200) {
-//         console.log(response.data.message); // Optional: Show success message
-//         updateUser(response.data.user); // Update user in AuthContext
-//       }
-//     } catch (error) {
-//       console.error("Login failed:", error.response?.data || error.message);
-//     }
-//   };
-
-//   return (
-//     <form onSubmit={handleLogin}>
-//       <input
-//         type="email"
-//         placeholder="Email"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
-//         required
-//       />
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//         required
-//       />
-//       <button type="submit">Login</button>
-//     </form>
-//   );
-// };
-
-// export default Login;

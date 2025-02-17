@@ -366,35 +366,6 @@ export const getRelatedProducts = async (req, res) => {
     }
   };
 
-
-
-  // Add this new controller function
-  // export const getSubcategories = async (req, res) => {
-  //   const validSubcategories = {
-  //     bags: ["Handbags", "Totes", "Crossbody Bags", "Clutches"],
-  //     shoes: ["Heels", "Flats", "Boots", "Sneakers"],
-  //     apparel: ["Dresses", "Tops", "Bottoms", "Outerwear"],
-  //     accessories: ["Jewelry", "Scarves", "Sunglasses", "Hats"]
-  //   };
-
-  //   try {
-  //     const category = req.params.category.toLowerCase(); // Ensure lowercase
-  //     const subcategories = validSubcategories[category] || [];
-  //     res.status(200).json(subcategories);
-  //   } catch (error) {
-  //     res.status(500).json([]);
-  //   }
-  // };
-
-  // export const getSubcategories = async (req, res) => {
-  //   const { category } = req.params;
-  //   try {
-  //     const subcategories = await SubcategoryModel.find({ category }); // Adjust this line based on your database schema
-  //     res.status(200).json(subcategories);
-  //   } catch (error) {
-  //     res.status(500).json({ message: "Failed to fetch subcategories" });
-  //   }
-  // };
   // In product.controller.js
   export const getSubcategories = (req, res) => {
     const validSubcategories = {

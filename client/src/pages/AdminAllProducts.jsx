@@ -1,13 +1,3 @@
-// import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
-// import { ToastContainer } from 'react-toastify'
-// const AdminAllProducts = () => {
-
-    
-// }
-
-// // export default AdminAllProducts
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -25,7 +15,6 @@ const AdminAllProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      // const response = await axios.get("http://localhost:4000/api/products/allproducts"); // Replace with actual API URL
       const response = await apiRequest.get("/products/allproducts"); // Replace with actual API URL
       setProducts(response.data);
     } catch (error) {
@@ -37,7 +26,6 @@ const AdminAllProducts = () => {
   const handleDelete = async (productId) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        // await axios.delete(`http://localhost:4000/api/products/${productId}`, { withCredentials: true });
         await apiRequest.delete(`/products/${productId}`);
         toast.success("Product deleted successfully");
         fetchProducts(); // Refresh product list
