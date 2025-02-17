@@ -35,7 +35,8 @@ import AiTools from "./pages/AiTools";
 import CategoryPage from './components/CategoryPage';
 import PostPage from './components/PostPage';
 
-
+import AdminNewsLetter from "./pages/AdminNewsletter"
+import AdminContact from "./pages/AdminContact";
 //protect routes component
 import ProtectRoute from "./components/ProtectRoute";
 import ProtectAdminRoute from "./components/ProtectAdminRoute";
@@ -75,6 +76,9 @@ function App() {
     <Route path="allproducts" element={<AdminAllProducts />} />
     <Route path="/admin/products/edit/:id" element={<AdminEditProdut />} />
     <Route path="orders" element={<AdminOrder />} />
+   <Route path="/admin/newsletter" element={<AdminNewsLetter />} />
+     <Route path="/admin/contact-data" element={<AdminContact />} />
+
   </Route>
 </Route>
             {/* </Route> */}
@@ -82,6 +86,7 @@ function App() {
 
               <Route path="/user-dash" element={<UserPage />} />
               <Route path="/setting" element={<UserSettings />} />
+
             </Route>
 
             </Routes>

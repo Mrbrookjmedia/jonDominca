@@ -47,7 +47,7 @@ export const login = async (req, res) => {
       return res.status(400).send({ message: "Invalid username or password" });
     }
 
-     const token=  generateTokenAndSetCookie(user._id);
+     const token=  generateTokenAndSetCookie(user._id,user.isAdmin);
 
     res.status(200).json({ message: "Login Successful", token, user });
   } catch (error) {

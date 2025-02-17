@@ -308,7 +308,8 @@ const AdminDashboard = () => {
   // )
   return (
   <div>
-    <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+    <h1 className="text-3xl font-bold mb-8 text-center mt-32">Admin Dashboard</h1>
+    <h2 className="text-center font-semibold"> Welcome to the dashboard!</h2>
   </div>
   )
 }

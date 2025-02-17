@@ -4,7 +4,9 @@ import { Sidebar } from "flowbite-react";
 import {
   HiArrowSmRight,
   HiChartPie,
+  HiDatabase,
   HiInbox,
+  HiNewspaper,
   HiShoppingBag,
   HiTable,
   HiUser,
@@ -37,6 +39,12 @@ export function AdminSidebar() {
                 </Sidebar.Collapse>
                 <Sidebar.Item href="/admin/orders" icon={HiTable}>
                   Orders
+                </Sidebar.Item>
+                <Sidebar.Item href="/admin/newsletter" icon={HiNewspaper}>
+                  Newsletter
+                </Sidebar.Item>
+                <Sidebar.Item href="/admin/contact-data" icon={HiDatabase}>
+                Contact Data
                 </Sidebar.Item>
               </Sidebar.ItemGroup>
             </Sidebar.Items>

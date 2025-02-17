@@ -13,7 +13,8 @@ import orderRoutes from "./routes/order.routes.js";
 import wishlistRoutes from "./routes/wishlist.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import connectToDatabase from "./db/connectTodatabase.js";
-
+import newsletterRoutes from "./routes/newsletter.routes.js";
+import contactRoutes from "./routes/contact.routes.js";
 const __dirname = path.resolve();
 
 // Middleware
@@ -23,8 +24,8 @@ app.use(cookieParser());
 app.set("trust proxy", 1);
 app.use(cors({
   // origin: "http://localhost:5173",
-
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  origin: "https://jon-dominica.netlify.app",
+  // origin: process.env.CLIENT_URL || "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization","Cache-Control"],
   credentials: true 
@@ -37,7 +38,8 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);        // Order routes
 app.use("/api/users", userRoutes);          // Single instance of user routes
 app.use("/api/user/wishlist", wishlistRoutes);
-
+app.use("/api/newsletter", newsletterRoutes);
+app.use("/api/contact", contactRoutes);
 // Serve static files in production
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
