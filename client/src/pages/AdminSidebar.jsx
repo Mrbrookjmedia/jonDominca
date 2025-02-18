@@ -12,6 +12,8 @@ import {
   HiUser,
   HiViewBoards,
 } from "react-icons/hi";
+import { Link } from 'react-router-dom';
+
 
 export function AdminSidebar() {
   return (
@@ -40,10 +42,10 @@ export function AdminSidebar() {
                 <Sidebar.Item href="/admin/orders" icon={HiTable}>
                   Orders
                 </Sidebar.Item>
-                <Sidebar.Item href="/admin/newsletter" icon={HiNewspaper}>
+                <Sidebar.Item as={Link} to="/admin/newsletter" icon={HiNewspaper}>
                   Newsletter
                 </Sidebar.Item>
-                <Sidebar.Item href="/admin/contact-data" icon={HiDatabase}>
+                <Sidebar.Item as={Link} to="/admin/contact-data" icon={HiDatabase}>
                 Contact Data
                 </Sidebar.Item>
               </Sidebar.ItemGroup>

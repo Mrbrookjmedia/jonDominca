@@ -1,6 +1,7 @@
 import express from "express";
 import Contact from "../models/contact.model.js";
 import { verifyToken } from "../middleware/verifyToken.js";
+import { admin } from "../middleware/admin.js";
 
 const router = express.Router();
 
@@ -23,7 +24,7 @@ router.post("/submit", async (req, res) => {
 });
 
 // Get all contact data (Admin only)
-router.get("/", verifyToken, async (req, res) => {
+router.get("/", verifyToken, admin, async (req, res) => {
   try {
     // Check if user is an admin
     if (!req.isAdmin) {

@@ -1,7 +1,7 @@
 import express from "express";
 import Newsletter from "../models/newsletter.model.js";
 import { verifyToken } from "../middleware/verifyToken.js";
-
+import {admin} from "../middleware/admin.js"
 const router = express.Router();
 
 // Subscribe to newsletter
@@ -29,7 +29,7 @@ router.post("/subscribe", async (req, res) => {
 });
 
 // Get all subscribed emails (Admin only)
-router.get("/", async (req, res) => {
+router.get("/", verifyToken, admin, async (req, res) => {
   try {
     const subscriptions = await Newsletter.find().sort({ subscribedAt: -1 });
     res.status(200).json(subscriptions);

@@ -42,6 +42,7 @@ app.use("/api/contact", contactRoutes);
 // Serve static files in production
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
+
 // Catch-all route for React app
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import apiRequest from "../lib/apiRequest";
 const AdminNewsletter = () => {
   const [subscriptions, setSubscriptions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -8,7 +8,8 @@ const AdminNewsletter = () => {
   useEffect(() => {
     const fetchSubscriptions = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/newsletter`);
+        // const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/newsletter`);
+        const response = await apiRequest.get("/newsletter");
         setSubscriptions(response.data);
         setLoading(false);
       } catch (error) {
