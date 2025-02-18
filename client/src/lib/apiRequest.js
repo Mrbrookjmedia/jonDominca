@@ -11,7 +11,7 @@ apiRequest.interceptors.request.use(
     const token = localStorage.getItem("jwt");
     if (token) {
       config.headers.Authorization = `Bearer ${token}`; // Add header
-      console.log("Authorization header set:", token); // Debugging
+      // console.log("Authorization header set:", token); // Debugging
     }
     return config;
   },

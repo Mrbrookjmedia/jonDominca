@@ -18,7 +18,7 @@ const UserPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("JWT Token:", localStorage.getItem("jwt")); // Debugging log
+        // console.log("JWT Token:", localStorage.getItem("jwt")); // Debugging log
         const [ordersRes, wishlistRes] = await Promise.all([
           apiRequest.get("/orders/user", {
             headers: {

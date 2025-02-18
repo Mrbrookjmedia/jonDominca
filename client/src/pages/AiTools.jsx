@@ -75,7 +75,7 @@ const normalizedData = {
 
 
     try {
-      console.log('Request Payload:', data); // Debugging payload
+      // console.log('Request Payload:', data); // Debugging payload
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -83,7 +83,7 @@ const normalizedData = {
       });
       if (!response.ok) throw new Error(`HTTP error! status ${response.status}`);
       const result = await response.json();
-      console.log('API Response:', result); // Debugging response
+      // console.log('API Response:', result); // Debugging response
       setResults(result);
       setOpen(true);
     } catch (error) {

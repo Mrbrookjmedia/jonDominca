@@ -84,7 +84,7 @@ const login = async (userData) => {
 // Store token in localStorage
 localStorage.setItem("jwt", res.data.token);
 localStorage.setItem("user", JSON.stringify(res.data.user));
-console.log("Token stored:", res.data.token); // Debugging
+// console.log("Token stored:", res.data.token); // Debugging
 
 // Add this header validation
 apiRequest.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
