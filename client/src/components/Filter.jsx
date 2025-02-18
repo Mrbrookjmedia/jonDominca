@@ -92,7 +92,7 @@ export default function Filter({ filters, onFilterChange }) {
         <input
           type="range"
           min="50"
-          max="2000"
+          max="10000"
           value={filters.price}
           onChange={(e) => onFilterChange("price", e.target.value)}
           className="w-full range-sm"

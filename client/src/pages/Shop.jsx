@@ -130,7 +130,7 @@ import apiRequest from "../lib/apiRequest";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({ 
-    price: 2000, 
+    price: 10000, 
     color: "", 
     size: "", 
     subcategory: "", 
