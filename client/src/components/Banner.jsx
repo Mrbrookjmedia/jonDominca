@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 export default function Banner() {
 
     return (
-        <div className="mt-5 relative w-screen  h-[716px] ">
+        <div className=" relative w-screen  h-[716px]  -translate-y-5">
             <div className="absolute top-0 left-0 z-[1] w-full h-full "></div>
 
             {/* Background Image */}
