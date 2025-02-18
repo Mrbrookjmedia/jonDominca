@@ -18,7 +18,7 @@ const UserPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("JWT Token:", localStorage.getItem("jwt")); // Debugging log
+        // console.log("JWT Token:", localStorage.getItem("jwt")); // Debugging log
         const [ordersRes, wishlistRes] = await Promise.all([
           apiRequest.get("/orders/user", {
             headers: {
@@ -92,7 +92,7 @@ const UserPage = () => {
   if (isLoading) return <div className="text-center py-10">Loading...</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl h-screen mx-auto px-4 py-8">
       <ToastContainer />
 
       {/* Profile Overview */}

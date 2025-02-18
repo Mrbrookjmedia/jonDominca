@@ -119,7 +119,7 @@
 // export default Shop;
 
 
-
+import axios from "axios";
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -130,7 +130,7 @@ import apiRequest from "../lib/apiRequest";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({ 
-    price: 500, 
+    price: 2000, 
     color: "", 
     size: "", 
     subcategory: "", 
@@ -141,6 +141,7 @@ const Shop = () => {
   // Fetch products on mount
   useEffect(() => {
     apiRequest.get("/products/allproducts")
+    // axios.get("http://localhost:4000/api/products/allproducts")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Error fetching products", err));
   }, []);
@@ -230,7 +231,7 @@ const Shop = () => {
           onSearch={(value) => handleFilterChange("search", value)} 
         />
         
-        <div className="flex flex-col md:flex-row">
+        <div className="lg:flex md:flex-row">
           <Filter 
             filters={filters} 
             onFilterChange={handleFilterChange} 

@@ -43,7 +43,7 @@ const AIFashionLanding = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 ">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16 animate-fade-in">
         <div className="text-center mb-16">
@@ -56,7 +56,7 @@ const AIFashionLanding = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
             <div
               key={feature.id}

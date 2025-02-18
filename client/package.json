@@ -9,10 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-"resolutions": {
-  "@rollup/rollup-linux-x64-gnu": "4.34.6"
-},
-
+  "resolutions": {
+    "@rollup/rollup-linux-x64-gnu": "4.34.6"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -31,7 +30,7 @@
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
     "flowbite-react": "^0.10.2",
-    "framer-motion": "^12.0.0",
+    "framer-motion": "^12.4.3",
     "lucide-react": "^0.474.0",
     "react": "^18.3.1",
     "react-datepicker": "^8.0.0",
@@ -43,6 +42,7 @@
     "react-toastify": "^11.0.3",
     "redux": "^5.0.1",
     "styled-components": "^6.1.14",
+    "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

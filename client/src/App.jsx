@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import Navbar from "./components/Navbar";
+
 import Footer from "./components/Footer";
 import { AuthContextProvider } from "./context/AuthContext";
 // import {CartContextProvider} from "./context/CartContext";
@@ -45,8 +46,8 @@ import ProtectAdminRoute from "./components/ProtectAdminRoute";
 function App() {
   return (
     <AuthContextProvider>
-    <CartProvider>
-        <Router> 
+      <CartProvider>
+        <Router>
           <Navbar />
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -61,13 +62,26 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/collections" element={<Collection />} />
               <Route path="/blog" element={<Blogs />} />
+              <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:categorySlug" element={<CategoryPage />} />
-        <Route path="/blog/post/:postSlug" element={<PostPage />} />
+              <Route path="/blog/post/:postSlug" element={<PostPage />} />
               <Route path="/aipage" element={<AiPage />} />
               <Route element={<ProtectRoute />}></Route>
 
 
               <Route element={<ProtectAdminRoute />}>
+                <Route path="/admin" element={<AdminHomepage />}>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="dashboard" element={<AdminDashboard />} />
+                  <Route path="users" element={<AdminUser />} />
+                  <Route path="createproducts" element={<CreateNewProduct />} />
+                  <Route path="allproducts" element={<AdminAllProducts />} />
+                  <Route path="/admin/products/edit/:id" element={<AdminEditProdut />} />
+                  <Route path="orders" element={<AdminOrder />} />
+                </Route>
+              </Route>
+              {/* </Route> */}
+              <Route element={<ProtectRoute />}>
   <Route path="/admin" element={<AdminHomepage />}>
     <Route index element={<AdminDashboard />} />
     <Route path="dashboard" element={<AdminDashboard />} />
@@ -94,7 +108,7 @@ function App() {
           <Footer />
           <ToastContainer />
         </Router>
-    </CartProvider>
+      </CartProvider>
     </AuthContextProvider>
   );
 }

@@ -159,12 +159,12 @@ const CartPage = () => {
               </div>
               
               <div className="flex justify-between">
-                <button
+                {/* <button
                   onClick={clearCart}
                   className="px-4 py-2 text-red-500 hover:text-red-600"
                 >
                   Clear Cart
-                </button>
+                </button> */}
                 <button
                   onClick={handleCheckout}
                   disabled={isProcessingOrder}

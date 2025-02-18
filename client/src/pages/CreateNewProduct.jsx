@@ -80,7 +80,7 @@ const CreateNewProduct = () => {
     
     try {
       const response = await apiRequest.get(`/products/subcategories/${category}`);
-      console.log("Subcategories fetched:", response.data); // Debug log
+      // console.log("Subcategories fetched:", response.data); // Debug log
       // Force array format even if undefined/null
       const subcategories = Array.isArray(response.data) ? response.data : [];
       setAvailableSubcategories(subcategories);

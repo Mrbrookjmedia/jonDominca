@@ -33,7 +33,7 @@ const SignUp = () => {
         password: formData.password,
       });
 
-      console.log(response.data);
+      // console.log(response.data);
       toast.success(response.data.message);
       setTimeout(() => {
         navigate("/login");
