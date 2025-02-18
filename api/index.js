@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.set("trust proxy", 1);
 app.use(cors({
 origin: "https://jon-dominica.netlify.app",
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  // origin: process.env.CLIENT_URL || "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization","Cache-Control"],
   credentials: true 
