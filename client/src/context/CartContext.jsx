@@ -10,12 +10,14 @@ export const CartProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   const fetchCart = async () => {
-    try {
+    try {  
+      
       const response = await apiRequest.get('/cart');
       setCart(response.data.items || []);
       setError(null);
+      // await fetchCart();
     } catch (err) {
-      setError("Failed to load cart");
+      setError("Failed to load cart, kindly refresh the page");
       console.error("Error fetching cart:", err);
     } finally {
       setLoading(false);

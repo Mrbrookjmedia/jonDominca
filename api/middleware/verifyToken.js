@@ -19,6 +19,7 @@ import jwt from "jsonwebtoken";
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       console.log("Decoded token:", decoded); // Log decoded token
       req.userId = decoded.userId;
+      req.isAdmin = decoded.isAdmin; // Add this line
       next();
     } catch (error) {
       console.error("Token verification error:", error);
