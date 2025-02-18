@@ -61,6 +61,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/collections" element={<Collection />} />
               <Route path="/blog" element={<Blogs />} />
+              <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:categorySlug" element={<CategoryPage />} />
               <Route path="/blog/post/:postSlug" element={<PostPage />} />
               <Route path="/aipage" element={<AiPage />} />

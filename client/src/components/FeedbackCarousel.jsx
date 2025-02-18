@@ -69,7 +69,7 @@ export default function FeedbackCarosel() {
       plugins={[Autoplay({
         delay: 4000,
       }),]}
-      className="w-full max-w-7xl h-auto max-h-96"
+      className="w-full max-w-6xl h-auto max-h-96"
 
 
     >
@@ -77,11 +77,11 @@ export default function FeedbackCarosel() {
       <CarouselContent >
 
         {data.map((ele, index) => (
-          <CarouselItem key={index} className=" flex  justify-around items-center md:basis-[45%] lg:basis-1/3 ">
-            <div className="p-1">
+          <CarouselItem key={index} className=" flex  justify-around items-center md:basis-[50%] lg:basis-1/3   ">
+            <div className="p-1 md:mr-4">
 
               {/*  main div for the feedback */}
-              <div className="w-96 h-72 border-2 border-gray-500  b- flex flex-col m-5 p-5 gap-5 overflow-hidden   rounded-lg shadow-md ">
+              <div className="w-[95%] h-72 border-2 border-gray-500  b- flex flex-col m-5 p-5 gap-3 overflow-hidden   rounded-lg shadow-md ">
                 
                 
                 <div className="flex  justify-between ">

@@ -83,16 +83,16 @@ export default function Filter({ filters, onFilterChange }) {
   ];
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 md:w-1/4 md:mr-4">
+    <div className="md:flex md:gap-10 lg:flex-col lg:max-w-64 lg:h-auto bg-white shadow-md rounded-lg p-4 md:w-full md:mr-4">
       {/* Price Filter */}
-      <div className="mb-4">
+      <div className="mb-4 mx-4">
         <label className="block text-gray-600 mb-2">
           Price: ${filters.price}
         </label>
         <input
           type="range"
           min="50"
-          max="500"
+          max="2000"
           value={filters.price}
           onChange={(e) => onFilterChange("price", e.target.value)}
           className="w-full range-sm"
@@ -100,7 +100,7 @@ export default function Filter({ filters, onFilterChange }) {
       </div>
 
       {/* Color Filter */}
-      <div className="mb-4">
+      <div className="mb-4 ">
         <label className="block text-gray-600 mb-2">Color</label>
         <select
           value={filters.color}
@@ -115,7 +115,7 @@ export default function Filter({ filters, onFilterChange }) {
       </div>
 
       {/* Size Filter */}
-      <div className="mb-4">
+      <div className="mb-4 ">
         <label className="block text-gray-600 mb-2">Size</label>
         <select
           value={filters.size}
@@ -130,7 +130,7 @@ export default function Filter({ filters, onFilterChange }) {
       </div>
 
       {/* Subcategory Filter */}
-      <div className="mb-4">
+      <div className="mb-4 ">
         <label className="block text-gray-600 mb-2">Category</label>
         <select
           value={filters.subcategory}

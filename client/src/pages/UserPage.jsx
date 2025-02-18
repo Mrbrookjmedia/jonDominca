@@ -92,7 +92,7 @@ const UserPage = () => {
   if (isLoading) return <div className="text-center py-10">Loading...</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl h-screen mx-auto px-4 py-8">
       <ToastContainer />
 
       {/* Profile Overview */}

@@ -93,7 +93,7 @@ function Home() {
 
                     {/* CARDs */}
 
-                    <div className=" flex overflow-hidden w-[90%]">
+                    <div className=" flex overflow-hidden w-[80%]">
                         <NewArrivalFinal></NewArrivalFinal>
                     </div>
                     {/* right arrow */}
@@ -138,7 +138,7 @@ function Home() {
 
                     {/* CARDs */}
 
-                    <div className=" flex overflow-hidden w-[90%] md:ml-24">
+                    <div className=" flex overflow-hidden w-[90%] md:ml-4">
                         <Link to="/collections"><ProductCard></ProductCard></Link>
                     </div>
                     {/* right arrow */}

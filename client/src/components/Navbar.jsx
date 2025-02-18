@@ -160,6 +160,13 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="flex gap-4 items-center sm:mr-10">
+             {/* Admin Dashboard Link - Only visible to admins */}
+             {currentUser?.isAdmin && (
+                        <Link to="/admin" className=" hover:text-blue-700 hover:font-bold" >
+                            Admin
+                        </Link>
+                    )}
+
             <ProfileIcon className="cursor-pointer text-xl" onClick={() => navigate("/user-dash")} />
             <CartIcon className="cursor-pointer text-xl" onClick={() => navigate("/cart")} />
 
@@ -192,13 +199,13 @@ const Navbar = () => {
         <div className="hidden sm:flex justify-center bg-orange p-2 border-y border-dark">
           {navitems.map(({ itemname, path }, index) => (
             <Link
-              className={twMerge("hover:text-blue-700  lg:py-3 lg:rounded-lg lg:p-1 px-4 sm:text-2xl lg:mr-8 lg:text-xl transition duration-300")}
+              className={twMerge("hover:text-blue-700  lg:py-3 lg:rounded-lg lg:p-1 px-4 md:text-2xl lg:mr-8 lg:text-xl transition duration-300")}
               key={index}
               to={path}
             >
               {itemname}
             </Link>
-          ))}
+          ))} 
         </div>
       </div>
 
