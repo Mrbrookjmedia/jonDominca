@@ -42,15 +42,14 @@ app.use("/api/contact", contactRoutes);
 // Serve static files in production
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
+// Health check route (invisible to normal users)
+app.get('/api/ping', (req, res) => {
+  res.sendStatus(200); // Responds with "OK"
+});
 
 // Catch-all route for React app
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
-
-// Health check route (invisible to normal users)
-app.get('/api/ping', (req, res) => {
-  res.sendStatus(200); // Responds with "OK"
 });
 
 // Start server
