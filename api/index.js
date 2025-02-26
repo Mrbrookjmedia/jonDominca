@@ -49,7 +49,7 @@ app.get("*", (req, res) => {
 });
 
 // Health check route (invisible to normal users)
-app.get('/ping', (req, res) => {
+app.get('/api/ping', (req, res) => {
   res.sendStatus(200); // Responds with "OK"
 });
 
