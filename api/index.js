@@ -48,6 +48,11 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
+// Health check route (invisible to normal users)
+app.get('/ping', (req, res) => {
+  res.sendStatus(200); // Responds with "OK"
+});
+
 // Start server
 
 const PORT = process.env.PORT || 4000;
